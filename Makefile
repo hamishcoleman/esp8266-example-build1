@@ -1,5 +1,5 @@
 include user.cfg
--include esp82xx/common.mf
+-include common.mf
 -include esp82xx/main.mf
 
 % :

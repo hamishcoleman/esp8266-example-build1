@@ -10,8 +10,8 @@ language: c
 #
 
 install:
-    - sudo sed -i -e 's/^Prompt=.*/Prompt=normal/' /etc/update-manager/release-upgrades
-    - sudo do-release-upgrade -f DistUpgradeViewNonInteractive
+    - sudo sed -i -e 's/bionic/eoan/g' /etc/apt/sources.list
+    - sudo apt-get update
     - sudo make build-dep
 
 script:

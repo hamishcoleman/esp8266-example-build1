@@ -22,4 +22,4 @@ showvars:
 
 build-deps:
 	sudo apt-get install -y \
-	    binutils-xtensa-lx106 gcc-xtensa-lx106
+	    binutils-xtensa-lx106 gcc-xtensa-lx106 esptool

@@ -35,7 +35,7 @@ PAGE_SCRIPTS?=$(wildcard web/page/*.js)
 
 # Getting xtensa compiler paths from shell variables
 ESP_DEFAULT = $(HOME)/esp8266/esp-open-sdk
-ESP_ROOT := $(shell echo "$$ESP_ROOT")
+ESP_ROOT ?= $(shell echo "$$ESP_ROOT")
 ifeq ($(strip $(ESP_ROOT)),)
     $(warning Warning: No shell variable 'ESP_ROOT', using '$(ESP_DEFAULT)')
     ESP_ROOT := $(ESP_DEFAULT)

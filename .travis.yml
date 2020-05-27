@@ -1,0 +1,20 @@
+os: linux
+dist: bionic
+
+language: c
+
+# If travis-ci starts offering something newer than ubuntu 18, it will contain
+# the correct gcc and binutils, and we can skip the upgrade done here.
+#
+# Both current Debian Stable and Ubuntu LTS have these packages...
+#
+
+install:
+    - sudo apt-get update
+    - sudo apt-get -y upgrade
+    - sudo apt-get -y dist-upgrade
+    - sudo do-release-upgrade -f DistUpgradeViewNonInteractive
+    - sudo make build-dep
+
+script:
+    - make all

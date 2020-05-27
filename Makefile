@@ -20,3 +20,6 @@ showvars:
 	$(foreach v, $(.VARIABLES), $(info $(v) = $($(v))))
 	true
 
+build-deps:
+	sudo apt-get install -y \
+	    binutils-xtensa-lx106 gcc-xtensa-lx106

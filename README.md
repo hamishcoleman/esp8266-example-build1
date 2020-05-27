@@ -14,5 +14,5 @@ of a hack, but my first intent was to build a working demonstrator.
 
 # Usage:
 
-- `make build-dep`
+- `make build-deps`
 - `make all`

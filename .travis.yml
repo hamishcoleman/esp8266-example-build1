@@ -12,7 +12,7 @@ language: c
 install:
     - sudo sed -i -e 's/bionic/eoan/g' /etc/apt/sources.list
     - sudo apt-get update
-    - sudo make build-dep
+    - sudo make build-deps
 
 script:
     - make all

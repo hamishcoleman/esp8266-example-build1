@@ -15,6 +15,7 @@
 #include "commonservices.h"
 #include "vars.h"
 #include <mdns.h>
+#include <gpio.h>
 
 /*==============================================================================
  * Partition Map Data
@@ -91,6 +92,8 @@ static os_timer_t some_timer;
 static struct espconn *pUdpServer;
 usr_conf_t * UsrCfg = (usr_conf_t*)(SETTINGS.UserData);
 
+int loops;
+
 /*==============================================================================
  * Functions
  *============================================================================*/
@@ -116,6 +119,14 @@ static void ICACHE_FLASH_ATTR procTask(os_event_t *events)
 static void ICACHE_FLASH_ATTR timer100ms(void *arg)
 {
 	CSTick( 1 ); // Send a one to uart
+
+    /* Make it blink to show things are not crashed */
+    loops++;
+    if ((loops & 0x7) == 0) {
+        int on = GPIO_INPUT_GET( GPIO_ID_PIN(2) );
+        on = !on;
+        GPIO_OUTPUT_SET(GPIO_ID_PIN(2), on );
+    }
 }
 
 /**

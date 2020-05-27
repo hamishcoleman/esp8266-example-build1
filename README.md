@@ -9,3 +9,10 @@ To try and document a working and fully automated example, using the OS
 provided GCC and binutils.
 
 This example builds using the https://github.com/cnlohr/esp82xx framework.
+There are obviously some improvements that could be made to make this less
+of a hack, but my first intent was to build a working demonstrator.
+
+# Usage:
+
+- `make build-dep`
+- `make all`

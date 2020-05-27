@@ -13,6 +13,7 @@ install:
     - sudo apt-get update
     - sudo apt-get -y upgrade
     - sudo apt-get -y dist-upgrade
+    - sudo sed -i -e 's/^Prompt=.*/Prompt=normal/' /etc/update-manager/release-upgrades
     - sudo do-release-upgrade -f DistUpgradeViewNonInteractive
     - sudo make build-dep
 
